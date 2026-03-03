@@ -36,7 +36,7 @@ export const createProduct = async (req: Request, res: Response, next: NextFunct
     });
 
     await newProduct.save();
-    return res.status(201).send({ message: 'Товар успешно создан', product: newProduct });
+    return res.status(201).send({ id: newProduct.id });
   } catch (err) {
     if (err instanceof MongooseError.ValidationError) {
       return next(new BadRequestError('Ошибка валидации данных при создании товара'));
