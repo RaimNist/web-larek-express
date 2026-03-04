@@ -12,7 +12,7 @@ import { requestLogger, errorLogger } from './middlewares/logger';
 
 dotenv.config();
 
-const { PORT, DB_ADDRESS, ORIGIN_ALLOW } = process.env;
+const { PORT = 3000, DB_ADDRESS = 'mongodb://127.0.0.1:27017/weblarek', ORIGIN_ALLOW = 'http://localhost:3000' } = process.env;
 
 const app = express();
 
